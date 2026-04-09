@@ -11,6 +11,7 @@ const NAV_HTML = `
     </div>
   </a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="disciplines.html">Disciplines</a></li>
     <li><a href="specialisms.html">Specialisms</a></li>
@@ -55,7 +56,7 @@ const FOOTER_HTML = `
       <div class="footer-brand">VG International SG Pte Ltd</div>
       <div class="footer-tag">Architecture · Structural · MEPF · Singapore · Global</div>
       <div class="footer-tagline">"Engineering the Future, Built on Trust."</div>
-      <div style="font-family:var(--f-body);font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.9;">
+      <div class="footer-info body-text mt1">
         18 Robinson Road, #09-01<br>
         Singapore 048547<br>
         consult@vginternational.com.sg
@@ -116,9 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trustSlot) trustSlot.outerHTML = TRUST_BAR_HTML;
 
   // Active nav link
-  const page = window.location.pathname.split('/').pop() || 'index.html';
+  let page = window.location.pathname.split('/').pop() || 'index.html';
+  if (page === '') page = 'index.html'; // Handle directory root
+  
   document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === page) a.classList.add('active');
+    const href = a.getAttribute('href');
+    if (href === page || (page === 'index.html' && href === './')) {
+      a.classList.add('active');
+    }
   });
 
   // ── NAV SCROLL BEHAVIOUR ──────────────────

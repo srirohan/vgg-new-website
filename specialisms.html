@@ -6,34 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<style>
-.spec-nav {
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-top: 3rem;
-}
-.sn-item {
-  background: var(--bg-2);
-  padding: 1.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background 0.3s;
-  display: flex; flex-direction: column; gap: 8px;
-}
-.sn-item:hover { background: var(--bg-3); }
-.sn-icon { font-size: 1.5rem; }
-.sn-num  { font-family: var(--f-body); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-.sn-name { font-family: var(--f-body); font-size: 0.78rem; font-weight: 500; color: var(--ink-2); }
-.caps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
-@media(max-width:900px){
-  .spec-nav { grid-template-columns: repeat(3,1fr); }
-  .spec-inner { grid-template-columns: 1fr !important; }
-  .caps-grid  { grid-template-columns: 1fr; }
-}
-</style>
+
 </head>
 <body>
 <div id="scroll-progress"></div>
@@ -42,157 +15,169 @@
 <!-- CINEMATIC HERO -->
 <section class="video-hero tall">
   <div class="video-hero-bg">
-    <video autoplay muted loop playsinline>
-      <source src="Public/grok-video-1aac2b0e-0000-4c14-b523-3ff23140ae55.mp4" type="video/mp4">
-    </video>
+    <img src="Public/specialisms-hero.png" alt="Specialisms Hero">
   </div>
   <div class="video-hero-overlay"></div>
   <div class="video-hero-content">
-    <div class="eyebrow eyebrow-white">Specialised Expertise · Global Delivery</div>
-    <h1 class="display-xl">Precision <em>Engineering.</em></h1>
-    <p class="hero-sub">The sectors where VG's integrated model delivers the most value — where performance is non-negotiable and fragmented consultants simply cannot compete.</p>
-    <!-- Quick nav inside hero -->
-    <div class="spec-nav" style="margin-top:3rem; grid-template-columns:repeat(6,1fr);">
-      <a href="#netzero"    class="sn-item"><span class="sn-icon">🌿</span><span class="sn-num">01</span><span class="sn-name">Net Zero</span></a>
-      <a href="#datacenter" class="sn-item"><span class="sn-icon">🖥️</span><span class="sn-num">02</span><span class="sn-name">Data Centres</span></a>
-      <a href="#coldchain"  class="sn-item"><span class="sn-icon">❄️</span><span class="sn-num">03</span><span class="sn-name">Cold Chain</span></a>
-      <a href="#retrofit"   class="sn-item"><span class="sn-icon">🔄</span><span class="sn-num">04</span><span class="sn-name">Retrofits</span></a>
-      <a href="#owners"     class="sn-item"><span class="sn-icon">🏦</span><span class="sn-num">05</span><span class="sn-name">Owner's Eng.</span></a>
-      <a href="#dpc"        class="sn-item"><span class="sn-icon">📋</span><span class="sn-num">06</span><span class="sn-name">D+P+C</span></a>
+    <div class="eyebrow eyebrow-white reveal-init">Specialised Expertise · Global Delivery</div>
+    <h1 class="display-xl reveal-init">Precision <em>Engineering.</em></h1>
+    <p class="hero-sub reveal-init">The sectors where VG's integrated model delivers the most value — where performance is non-negotiable and fragmented consultants simply cannot compete.</p>
+    
+    <!-- Expertise Navigation -->
+    <div class="btn-row center mt2 reveal-init">
+      <a href="#netzero" class="btn btn-outline-white">Net Zero</a>
+      <a href="#datacenter" class="btn btn-outline-white">Data Centres</a>
+      <a href="#coldchain" class="btn btn-outline-white">Cold Chain</a>
+      <a href="#retrofit" class="btn btn-outline-white">Retrofit</a>
+      <a href="#owners" class="btn btn-outline-white">Owner's Eng.</a>
+      <a href="#dpc" class="btn btn-outline-white">D+P+C</a>
     </div>
   </div>
 </section>
 
 <div id="trust-placeholder"></div>
 
+<!-- SECTORS -->
 <div class="section">
 
-  <!-- NET ZERO -->
-  <div class="spec-block" id="netzero">
-    <div class="spec-badge">Sector 01 · Net Zero Buildings</div>
-    <div class="spec-inner" style="grid-template-columns:1fr 1.4fr;">
-      <div class="reveal-init">
-        <h2 class="sec-title" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">Carbon-zero architecture<br><em>by design.</em></h2>
-        <p class="body-text" style="margin-bottom:2rem;">Buildings account for 40% of global energy. VG embeds net zero thinking into every structural material and MEPF selection — not as a bolt-on, but as a core design driver.</p>
-        <div class="caps-grid">
-          <div class="cap-box"><div class="cap-box-title">Passive Design</div><p class="cap-box-text">Climate-responsive orientation and high-performance envelopes.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Energy Modelling</div><p class="cap-box-text">Advanced IES VE and EnergyPlus simulations globally.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Certifications</div><p class="cap-box-text">LEED, BREEAM, WELL, IGBC, and Green Mark Management.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Renewables</div><p class="cap-box-text">Solar PV, BIPV, and advanced battery storage integration.</p></div>
+  <!-- 01 NET ZERO -->
+  <div class="mag-pair" id="netzero">
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 01</div>
+      <h2 class="display-section mb1">Carbon-zero architecture<br><em>by design.</em></h2>
+      <p class="body-text mb2">Buildings account for 40% of global energy. VG embeds net zero thinking into every structural material and MEPF selection — not as a bolt-on, but as a core design driver.</p>
+      <div class="grid-2 gap-s3">
+        <div class="cap-box">
+          <div class="cap-box-title">Passive Design</div>
+          <p class="cap-box-text">Climate-responsive orientation and high-performance envelopes.</p>
+        </div>
+        <div class="cap-box">
+          <div class="cap-box-title">Energy Modelling</div>
+          <p class="cap-box-text">Advanced IES VE and EnergyPlus simulations globally.</p>
         </div>
       </div>
-      <div class="stat-col reveal-init">
-        <div class="mini-stat"><div class="mini-stat-num" data-count="40" data-suffix="%">40%</div><div class="mini-stat-label">Energy use by buildings globally</div></div>
-        <div class="mini-stat"><div class="mini-stat-num" data-count="195">195</div><div class="mini-stat-label">Countries with net-zero pledges</div></div>
-        <div class="mini-stat" style="border-top:3px solid var(--gold);"><div class="mini-stat-num" data-count="42" data-suffix="%">42%</div><div class="mini-stat-label">VG avg. energy reduction achieved</div></div>
-        <div style="margin-top:1.5rem;"><a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;">Request an Energy Audit</a></div>
+      <a href="contact.html" class="btn btn-gold mt2">Request an Energy Audit</a>
+    </div>
+    <div class="mag-image reveal-init">
+      <img src="Public/net-zero-feature.png" alt="Net Zero Buildings">
+      <div class="mag-label">Sustainability · Global Standards</div>
+    </div>
+  </div>
+
+  <!-- 02 DATA CENTRES -->
+  <div class="mag-pair reverse" id="datacenter">
+    <div class="mag-image reveal-init">
+      <img src="Public/data-center-feature.png" alt="Data Centres">
+      <div class="mag-label">Mission Critical · Uptime Tier IV</div>
+    </div>
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 02</div>
+      <h2 class="display-section mb1">Hyperscale infrastructure<br><em>engineered for AI.</em></h2>
+      <p class="body-text mb2">From Singapore to the UAE — VG delivers full A+S+MEPF for the digital world's most demanding environments. We understand Uptime, PUE, and redundancy at a system level.</p>
+      <ul class="arrow-list mb2">
+        <li>Tier IV Master Planning &amp; POD-based design</li>
+        <li>High floor loading (20 kN/m²) &amp; seismic isolation</li>
+        <li>PUE optimisation &amp; liquid cooling integration</li>
+      </ul>
+      <div class="mini-stat" style="border-top:1px solid var(--border);">
+        <div class="mini-stat-num" style="font-size: 1.8rem; color: var(--gold);">PUE 1.21</div>
+        <div class="mini-stat-label">Average Performance Achieved</div>
       </div>
     </div>
   </div>
 
-  <!-- DATA CENTRES -->
-  <div class="spec-block" id="datacenter">
-    <div class="spec-badge">Sector 02 · Mission Critical</div>
-    <h2 class="sec-title reveal-init" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">Hyperscale infrastructure<br><em>engineered for AI.</em></h2>
-    <p class="body-text reveal-init" style="max-width:800px; margin-bottom:3rem;">From campuses in Singapore to edge facilities in the UAE — VG delivers full A+S+MEPF for the digital world's most demanding environments. We understand Uptime, PUE, and redundancy at a system level.</p>
-    <div class="three-col">
-      <div class="cap-box reveal-init"><div class="cap-box-title">DC Architecture</div><p class="cap-box-text">Master planning &amp; POD-based modular design for hyperscale scalability.</p></div>
-      <div class="cap-box reveal-init"><div class="cap-box-title">Mission Structural</div><p class="cap-box-text">High floor loading (20 kN/m²) and seismic isolation for sensitive hardware.</p></div>
-      <div class="cap-box reveal-init"><div class="cap-box-title">Power &amp; Cooling</div><p class="cap-box-text">PUE optimisation, liquid cooling integration, and N+1 redundancy design.</p></div>
+  <!-- 03 COLD CHAIN -->
+  <div class="mag-pair" id="coldchain">
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 03</div>
+      <h2 class="display-section mb1">Precision refrigeration.<br><em>Global cold chain.</em></h2>
+      <p class="body-text mb2">VG designs and engineers multi-temperature cold storage facilities from -30°C blast freeze to +15°C controlled ambient — for food, pharma, and chemical logistics hubs.</p>
+      <div class="grid-2 gap-s2">
+        <div class="cap-box"><div class="cap-box-title">Ammonia Cascade</div><p class="cap-box-text">High-efficiency industrial refrigeration systems.</p></div>
+        <div class="cap-box"><div class="cap-box-title">CO₂ Transcritical</div><p class="cap-box-text">Modern, low-GWP refrigerant expertise.</p></div>
+      </div>
+      <a href="contact.html" class="btn btn-gold mt2">Discuss Your Facility</a>
     </div>
-    <div class="roi-tbl" style="margin-top:2.5rem;">
-      <table>
-        <tr><th>Design Target</th><th>VG Delivery Standard</th><th>Outcome</th></tr>
-        <tr><td>PUE Target ≤ 1.3</td><td>Precision airside design + EC fans</td><td style="color:var(--gold);">PUE 1.21–1.28 achieved</td></tr>
-        <tr><td>Tier IV Uptime</td><td>Full 2N critical systems</td><td style="color:var(--gold);">99.9999% availability</td></tr>
-        <tr><td>Floor Loading 20 kN/m²</td><td>PT slab &amp; seismic design</td><td style="color:var(--gold);">Zero structural RFIs</td></tr>
-      </table>
+    <div class="mag-image reveal-init">
+      <img src="Public/cold-chain-feature.png" alt="Cold Chain Refrigeration">
+      <div class="mag-label">Industrial · Temperature Controlled</div>
     </div>
   </div>
 
-  <!-- COLD CHAIN -->
-  <div class="spec-block" id="coldchain">
-    <div class="spec-badge">Sector 03 · Cold Chain &amp; Refrigeration</div>
-    <div class="spec-inner" style="grid-template-columns:1fr 1.4fr;">
-      <div class="reveal-init">
-        <h2 class="sec-title" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">Precision refrigeration.<br><em>Global cold chain.</em></h2>
-        <p class="body-text" style="margin-bottom:2rem;">VG designs and engineers multi-temperature cold storage facilities from -30°C blast freeze to +15°C controlled ambient — for food, pharma, and chemical logistics hubs.</p>
-        <ul class="check-list">
-          <li>Ammonia cascade refrigeration</li>
-          <li>CO₂ transcritical systems</li>
-          <li>Hybrid refrigerant design</li>
-          <li>High-load structural (30–45 kN/m²)</li>
-          <li>Multi-temp zone architecture</li>
-          <li>Temperature monitoring &amp; BMS</li>
-        </ul>
-      </div>
-      <div class="reveal-init">
-        <div class="mini-stat"><div class="mini-stat-num">85k</div><div class="mini-stat-label">Largest cold hub delivered (sqm)</div></div>
-        <div class="mini-stat"><div class="mini-stat-num">-30°C</div><div class="mini-stat-label">Minimum design temperature</div></div>
-        <div class="mini-stat"><div class="mini-stat-num" style="color:#2DD4BF;">NH₃</div><div class="mini-stat-label">Primary refrigerant expertise</div></div>
-        <div style="margin-top:1.5rem;"><a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;">Discuss Your Facility</a></div>
+  <!-- 04 RETROFIT -->
+  <div class="mag-pair reverse" id="retrofit">
+    <div class="mag-image reveal-init">
+      <img src="Public/retrofit-feature.png" alt="Retrofit">
+      <div class="mag-label">Asset Optimisation · NABERS</div>
+    </div>
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 04</div>
+      <h2 class="display-section mb1">Transform what<br>already <em>exists.</em></h2>
+      <p class="body-text mb2">VG audits, models and redesigns existing buildings for radical energy improvement — targeting NABERS, LEED EB and BREEAM In-Use while keeping buildings occupied.</p>
+      <div class="card-top">
+        <div class="cap-title">Deep Portfolio Retrofit</div>
+        <p class="body-text" style="font-size: 0.9rem;">From facade overcladding to central plant room redesign, we extend asset life while meeting 2030 net zero targets.</p>
       </div>
     </div>
   </div>
 
-  <!-- RETROFIT -->
-  <div class="spec-block" id="retrofit">
-    <div class="spec-badge">Sector 04 · Deep Retrofit</div>
-    <h2 class="sec-title reveal-init" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">Transform what<br>already <em>exists.</em></h2>
-    <p class="body-text reveal-init" style="max-width:700px; margin-bottom:3rem;">Demolish and rebuild is rarely the answer. VG audits, models and redesigns existing buildings for radical energy improvement — targeting NABERS, LEED EB and BREEAM In-Use while keeping buildings occupied.</p>
-    <div class="three-col">
-      <div class="cap-col reveal-init"><div class="cap-title">MEPF Retrofit</div><ul class="arrow-list"><li>Chiller replacement &amp; plant room redesign</li><li>LED relighting &amp; controls</li><li>BMS upgrade and IoT integration</li><li>Submetering and energy analytics</li></ul></div>
-      <div class="cap-col reveal-init"><div class="cap-title">Envelope Upgrade</div><ul class="arrow-list"><li>Double &amp; triple glazing replacement</li><li>Facade overcladding</li><li>Roof insulation &amp; green roofs</li><li>Air tightness testing &amp; sealing</li></ul></div>
-      <div class="cap-col reveal-init"><div class="cap-title">Certifications</div><ul class="arrow-list"><li>LEED EB: O+M</li><li>BREEAM In-Use</li><li>NABERS Energy</li><li>Green Mark Existing Building</li></ul></div>
+  <!-- 05 OWNER'S ENGINEERING -->
+  <div class="mag-pair" id="owners">
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 05</div>
+      <h2 class="display-section mb1">Your eyes and ears.<br><em>Our technical backbone.</em></h2>
+      <p class="body-text mb2">VG acts as an independent Owner's Engineer — providing technical oversight across the design and construction phases to protect the owner's brief, budget and quality expectations.</p>
+      <ul class="check-list">
+        <li>Design Review &amp; Constructability Analysis</li>
+        <li>Tender Analysis &amp; Contractor Selection</li>
+        <li>Construction monitoring &amp; NCR management</li>
+        <li>System validation &amp; Handover acceptance</li>
+      </ul>
+    </div>
+    <div class="mag-image reveal-init">
+      <img src="Public/owners-eng-feature.png" alt="Owner's Engineer">
+      <div class="mag-label">Technical Advisor · Independent Oversight</div>
     </div>
   </div>
 
-  <!-- OWNER'S ENGINEERING -->
-  <div class="spec-block" id="owners">
-    <div class="spec-badge">Sector 05 · Owner's Engineer</div>
-    <div class="spec-inner" style="grid-template-columns:1fr 1.4fr;">
-      <div class="reveal-init">
-        <h2 class="sec-title" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">Your eyes and ears.<br><em>Our technical backbone.</em></h2>
-        <p class="body-text">VG acts as an independent Owner's Engineer — providing technical oversight across the design and construction phases to protect the owner's brief, budget and quality expectations.</p>
-      </div>
-      <div class="reveal-init">
-        <div class="caps-grid">
-          <div class="cap-box"><div class="cap-box-title">Technical Audit</div><p class="cap-box-text">Design review, constructability analysis, specification audit.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Procurement Advisory</div><p class="cap-box-text">Contractor evaluation, tender analysis, negotiation support.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Site Oversight</div><p class="cap-box-text">Construction monitoring, NCR management, progress reporting.</p></div>
-          <div class="cap-box"><div class="cap-box-title">Commissioning</div><p class="cap-box-text">System validation, performance testing, handover acceptance.</p></div>
+  <!-- 06 D+P+C -->
+  <div class="mag-pair reverse" id="dpc">
+    <div class="mag-image reveal-init">
+      <img src="Public/dpc-lifecycle-feature.png" alt="D+P+C Lifecycle">
+      <div class="mag-label">Full Lifecycle · Integrated Delivery</div>
+    </div>
+    <div class="mag-text reveal-init">
+      <div class="section-tag">Sector 06</div>
+      <h2 class="display-section mb1">From whiteboard<br>to <em>handover.</em></h2>
+      <p class="body-text mb2">VG functions as technical lead across the full DPC lifecycle — compressing schedules, reducing interface risk, and delivering on fast-track programmes.</p>
+      <div class="grid-2 gap-s2">
+        <div class="hstat" style="text-align: left; padding: 0; border: none;">
+          <div class="hstat-num" data-count="30" data-suffix="%">30%</div>
+          <div class="hstat-label">Faster Timelines</div>
+        </div>
+        <div class="hstat" style="text-align: left; padding: 0; border: none;">
+          <div class="hstat-num" data-count="15" data-suffix="%">15%</div>
+          <div class="hstat-label">Cost Efficiency</div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- D+P+C -->
-  <div class="spec-block" id="dpc" style="border-bottom:none;">
-    <div class="spec-badge">Sector 06 · Design + Procurement + Construction</div>
-    <h2 class="sec-title reveal-init" style="font-size:clamp(2rem,3vw,3rem); margin-bottom:1.5rem;">From whiteboard<br>to <em>handover.</em></h2>
-    <p class="body-text reveal-init" style="max-width:700px; margin-bottom:3rem;">VG functions as technical lead across the full DPC lifecycle — compressing schedules, reducing interface risk, and delivering on fast-track programmes where others struggle to keep up.</p>
-    <div class="four-col" style="grid-template-columns:repeat(4,1fr);">
-      <div class="card reveal-init"><div class="card-num">Phase 01</div><div class="card-title">Design</div><div class="card-text">Concept through IFC — all three disciplines in one integrated BIM model.</div></div>
-      <div class="card reveal-init"><div class="card-num">Phase 02</div><div class="card-title">Procurement</div><div class="card-text">Technical specification, RFQ, bid evaluation, and contractor selection.</div></div>
-      <div class="card reveal-init"><div class="card-num">Phase 03</div><div class="card-title">Construction</div><div class="card-text">Site oversight, RFI management, shop drawing review, CCO tracking.</div></div>
-      <div class="card reveal-init"><div class="card-num">Phase 04</div><div class="card-title">Handover</div><div class="card-text">Commissioning support, O&amp;M documentation, CAFM system setup.</div></div>
+      <a href="contact.html" class="btn btn-gold mt2">Start Your Brief</a>
     </div>
   </div>
 
 </div>
 
 <!-- VIDEO BREAK + CTA -->
-<section class="video-hero medium" style="margin:0;">
+<section class="video-hero medium m0">
   <div class="video-hero-bg">
     <video autoplay muted loop playsinline>
       <source src="Public/grok-video-4b05b2da-9c78-42ac-9faa-d935e0daa63f.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="video-hero-overlay" style="background:rgba(0,0,0,0.45);"></div>
-  <div class="video-hero-content">
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content text-center v-start">
     <div class="eyebrow eyebrow-white">Which sector is yours?</div>
     <h2 class="display-lg">Let's talk about<br><em>your project.</em></h2>
-    <div class="btn-row center" style="margin-top:2rem;">
+    <div class="btn-row center mt2">
       <a href="contact.html" class="btn btn-gold">Request a Capability Deck</a>
       <a href="projects.html" class="btn btn-outline-white">See Portfolio</a>
     </div>

@@ -6,45 +6,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<style>
-.outcomes-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border);
-  background: var(--bg-2);
-  margin-top: 5rem;
-}
-.outcome-cell {
-  padding: 2.5rem 2rem;
-  border-right: 1px solid var(--border);
-  text-align: center;
-}
-.outcome-cell:last-child { border-right: none; }
-.outcome-big { font-family: var(--f-display); font-size: 2.8rem; font-weight: 400; color: var(--gold); line-height: 1; margin-bottom: 8px; }
-.outcome-lbl { font-family: var(--f-body); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
 
-@media(max-width:900px){
-  .outcomes-strip { grid-template-columns: repeat(2,1fr); }
-  .projects-grid { grid-template-columns: 1fr !important; }
-}
-</style>
 </head>
 <body>
 <div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
 <!-- CINEMATIC HERO -->
-<section class="video-hero tall">
+<section class="video-hero tall" style="background: #0B0B0B;">
   <div class="video-hero-bg">
-    <video autoplay muted loop playsinline>
-      <source src="Public/grok-video-4b05b2da-9c78-42ac-9faa-d935e0daa63f.mp4" type="video/mp4">
-    </video>
+    <img src="Public/c67fa4e6-c3da-4d36-9a5f-08311d23d4fe.jpg" alt="Projects Background" style="object-fit: contain; object-position: center;">
   </div>
-  <div class="video-hero-overlay"></div>
   <div class="video-hero-content">
-    <div class="eyebrow eyebrow-white">Global Project Portfolio</div>
-    <h1 class="display-xl">Our work<br><em>speaks for itself.</em></h1>
-    <p class="hero-sub">From net-zero campuses to hyperscale data centres — every project reflects our integrated A+S+MEPF delivery model.</p>
   </div>
 </section>
 
@@ -64,12 +37,12 @@
     <button class="filter-btn">Retrofit</button>
   </div>
 
-  <div class="projects-grid" style="grid-template-columns:repeat(3,1fr);">
+  <div class="grid-3 mt2">
 
     <!-- Project 01 -->
     <div class="proj-card reveal-init">
       <div class="proj-thumb">
-        <img src="hero_architectural_render_1_1775640076369.png" alt="Net Zero Campus">
+        <img src="Public/proj-singapore-campus.png" alt="Net Zero Campus Singapore">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -83,7 +56,7 @@
     <!-- Project 02 -->
     <div class="proj-card reveal-init">
       <div class="proj-thumb">
-        <img src="datacenter_render_1_1775640103196.png" alt="Data Center UAE">
+        <img src="Public/proj-uae-dc.png" alt="Hyperscale Data Centre UAE">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -97,7 +70,7 @@
     <!-- Project 03 -->
     <div class="proj-card reveal-init">
       <div class="proj-thumb">
-        <img src="industrial_cold_storage_render_1_1775640124865.png" alt="Cold Storage Hub">
+        <img src="Public/proj-india-cold.png" alt="Ammonia Cascade Cold Hub India">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -110,7 +83,8 @@
 
     <!-- Project 04 -->
     <div class="proj-card reveal-init">
-      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏢
+      <div class="proj-thumb">
+        <img src="Public/proj-riyadh-retrofit.png" alt="HVAC Deep Retrofit Riyadh">
         <div class="proj-thumb-overlay"><span>Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -123,7 +97,8 @@
 
     <!-- Project 05 -->
     <div class="proj-card reveal-init">
-      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏫
+      <div class="proj-thumb">
+        <img src="Public/proj-malaysia-hub.png" alt="University Innovation Hub Malaysia">
         <div class="proj-thumb-overlay"><span>Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -136,7 +111,8 @@
 
     <!-- Project 06 -->
     <div class="proj-card reveal-init">
-      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏭
+      <div class="proj-thumb">
+        <img src="Public/proj-india-edge.png" alt="Edge Data Centre India">
         <div class="proj-thumb-overlay"><span>Case Study</span></div>
       </div>
       <div class="proj-body">
@@ -150,38 +126,38 @@
   </div>
 
   <!-- Outcome Metrics -->
-  <div class="outcomes-strip reveal-init">
-    <div class="outcome-cell">
-      <div class="outcome-big" data-count="200" data-suffix="+">200+</div>
-      <div class="outcome-lbl">Projects Delivered</div>
+  <div class="stats-strip reveal-init mt2">
+    <div class="stat-box">
+      <div class="stat-big" data-count="200" data-suffix="+">200+</div>
+      <div class="stat-label">Projects Delivered</div>
     </div>
-    <div class="outcome-cell">
-      <div class="outcome-big" data-count="12" data-suffix="+">12+</div>
-      <div class="outcome-lbl">Global Markets</div>
+    <div class="stat-box">
+      <div class="stat-big" data-count="12" data-suffix="+">12+</div>
+      <div class="stat-label">Global Markets</div>
     </div>
-    <div class="outcome-cell">
-      <div class="outcome-big">$2B+</div>
-      <div class="outcome-lbl">Total Asset Value</div>
+    <div class="stat-box">
+      <div class="stat-big">$2B+</div>
+      <div class="stat-label">Total Asset Value</div>
     </div>
-    <div class="outcome-cell">
-      <div class="outcome-big" data-count="42" data-suffix="%">42%</div>
-      <div class="outcome-lbl">Avg. Energy Saved</div>
+    <div class="stat-box">
+      <div class="stat-big" data-count="42" data-suffix="%">42%</div>
+      <div class="stat-label">Avg. Energy Saved</div>
     </div>
   </div>
 </div>
 
 <!-- VIDEO BREAK -->
-<section class="video-hero medium" style="margin:0;">
+<section class="video-hero medium m0">
   <div class="video-hero-bg">
     <video autoplay muted loop playsinline>
       <source src="Public/grok-video-1aac2b0e-0000-4c14-b523-3ff23140ae55.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="video-hero-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%);"></div>
-  <div class="video-hero-content" style="align-self:flex-end; margin-bottom:60px;">
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content v-start mb2">
     <div class="eyebrow eyebrow-white">Next Project</div>
     <h2 class="display-lg">Your brief.<br><em>Our expertise.</em></h2>
-    <div class="btn-row center" style="margin-top:2rem;">
+    <div class="btn-row center mt2">
       <a href="contact.html" class="btn btn-gold">Start a Conversation</a>
     </div>
   </div>
