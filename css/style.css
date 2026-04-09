@@ -1382,16 +1382,45 @@ h2.sec-title em { font-style: italic; color: var(--gold); }
    PROMISE / VALUE CARDS
    ============================ */
 .promise-card {
-  padding: var(--s5);
+  padding: var(--s6) var(--s5);
   border: 1px solid var(--border);
   background: var(--bg);
   border-top: 3px solid transparent;
   transition: all 0.4s var(--ease);
+  display: flex; flex-direction: column;
+}
+
+.feat-icon {
+  width: 54px; height: 54px;
+  background: rgba(201,165,90,0.08);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s4);
+  color: var(--gold);
+  border: 1px solid rgba(201,165,90,0.15);
+}
+
+.feat-icon svg {
+  width: 28px; height: 28px;
 }
 
 .promise-card:hover {
   border-top-color: var(--gold);
+  background: var(--bg-2);
   box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.sc-title {
+  font-family: var(--f-display);
+  font-size: 1.4rem; font-weight: 400;
+  color: var(--ink); line-height: 1.2;
+}
+
+.sc-text {
+  font-family: var(--f-body);
+  font-size: 0.9rem; color: var(--ink-2);
+  line-height: 1.7;
 }
 
 /* ============================
