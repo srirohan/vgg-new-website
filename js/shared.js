@@ -10,6 +10,7 @@ const NAV_HTML = `
       <span class="nav-logo-sub">Architecture · Structure · MEPF</span>
     </div>
   </a>
+  
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -19,8 +20,40 @@ const NAV_HTML = `
     <li><a href="insights.html">Insights</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Request a Consultation</a>
-</nav>`;
+  
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta">Consult</a>
+    <button class="nav-burger" id="burger-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile-overlay" id="mobile-menu">
+  <div class="mobile-nav-inner">
+    <div class="mobile-nav-header">
+      <div class="nav-logo-mark">VG</div>
+      <button class="nav-burger active" id="close-menu-btn">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="disciplines.html">Disciplines</a></li>
+      <li><a href="specialisms.html">Specialisms</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <div class="footer-tag">Global Engineering & Strategy</div>
+      <a href="mailto:consult@vginternational.com.sg" class="nav-cta">Email Us</a>
+    </div>
+  </div>
+</div>`;
 
 // ═══════════════════════════════════════════
 //  TRUST BAR HTML
@@ -115,6 +148,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inject trust bar
   const trustSlot = document.getElementById('trust-placeholder');
   if (trustSlot) trustSlot.outerHTML = TRUST_BAR_HTML;
+
+  // ── MOBILE MENU LOGIC ─────────────────────
+  const burger = document.getElementById('burger-btn');
+  const closeBtn = document.getElementById('close-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+  function toggleMenu(open) {
+    if (open) {
+      menu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Stagger link reveal
+      mobileLinks.forEach((link, i) => {
+        setTimeout(() => link.style.opacity = '1', 100 + (i * 50));
+      });
+    } else {
+      menu.classList.remove('active');
+      document.body.style.overflow = '';
+      mobileLinks.forEach(link => link.style.opacity = '0');
+    }
+  }
+
+  if (burger) burger.addEventListener('click', () => toggleMenu(true));
+  if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+  mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 
   // Active nav link
   let page = window.location.pathname.split('/').pop() || 'index.html';
