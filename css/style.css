@@ -228,28 +228,32 @@ nav.scrolled .nav-burger span { background: var(--ink); }
   display: flex; flex-direction: column;
   opacity: 0; pointer-events: none;
   transition: opacity 0.4s var(--ease);
+  overflow-y: auto; /* Allow scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav-mobile-overlay.active { opacity: 1; pointer-events: all; }
 
 .mobile-nav-inner {
-  height: 100%; display: flex; flex-direction: column;
+  display: flex; flex-direction: column;
+  min-height: 100%;
   padding: var(--s4) var(--side);
 }
 
 .mobile-nav-header {
   display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: var(--s8);
+  margin-bottom: var(--s6); /* Reduced from s8 to save space */
 }
 
 .mobile-nav-links {
   list-style: none; display: flex; flex-direction: column;
-  gap: var(--s4);
+  gap: var(--s3); /* Reduced from s4 */
 }
 
 .mobile-nav-links a {
   font-family: var(--f-display);
-  font-size: 2.8rem; font-weight: 400;
+  font-size: clamp(2rem, 8vw, 2.6rem); /* Responsive scaling */
+  font-weight: 400;
   color: var(--ink); text-transform: capitalize;
   opacity: 0; transition: opacity 0.5s var(--ease);
 }
