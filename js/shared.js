@@ -26,19 +26,14 @@ const NAV_HTML = `
     <button class="nav-burger" id="burger-btn" aria-label="Menu">
       <span></span>
       <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
 
 <div class="nav-mobile-overlay" id="mobile-menu">
   <div class="mobile-nav-inner">
-    <div class="mobile-nav-header">
-      <div class="nav-logo-mark">VG</div>
-      <button class="nav-burger active" id="close-menu-btn">
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+    <div class="mobile-nav-header sr-only">Menu</div>
     <ul class="mobile-nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -50,7 +45,10 @@ const NAV_HTML = `
     </ul>
     <div class="mobile-nav-footer">
       <div class="footer-tag">Global Engineering & Strategy</div>
-      <a href="mailto:consult@vginternational.com.sg" class="nav-cta">Email Us</a>
+      <div class="flex-row gap-s2 mt1">
+        <a href="mailto:consult@vginternational.com.sg" class="nav-cta">Email</a>
+        <a href="contact.html" class="nav-cta">Form</a>
+      </div>
     </div>
   </div>
 </div>`;
@@ -151,28 +149,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── MOBILE MENU LOGIC ─────────────────────
   const burger = document.getElementById('burger-btn');
-  const closeBtn = document.getElementById('close-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
-  function toggleMenu(open) {
-    if (open) {
-      menu.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      // Stagger link reveal
-      mobileLinks.forEach((link, i) => {
-        setTimeout(() => link.style.opacity = '1', 100 + (i * 50));
-      });
-    } else {
-      menu.classList.remove('active');
-      document.body.style.overflow = '';
-      mobileLinks.forEach(link => link.style.opacity = '0');
-    }
-  }
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      burger.classList.toggle('active');
+      
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+        mobileLinks.forEach((link, i) => {
+          setTimeout(() => link.style.opacity = '1', 120 + (i * 40));
+        });
+      } else {
+        document.body.style.overflow = '';
+        mobileLinks.forEach(link => link.style.opacity = '0');
+      }
+    });
 
-  if (burger) burger.addEventListener('click', () => toggleMenu(true));
-  if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
-  mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        burger.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileLinks.forEach(l => l.style.opacity = '0');
+      });
+    });
+  }
 
   // Active nav link
   let page = window.location.pathname.split('/').pop() || 'index.html';
